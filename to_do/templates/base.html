@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="{{ url_for('static', filename= 'favicon.ico') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+	<title>{% block title %}待办事项{% endblock %}</title>
+</head>
+<section class="content">
+	<h1>
+		<strong>我的待办事项</strong>
+	</h1>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+	{% block content %}{% endblock %}
+</section>
