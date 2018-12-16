@@ -6,15 +6,20 @@
 		{{ form.body.label }}<br />
 		{{ form.body }}<br />
 		{{ form.submit }}<br />	
-	</form>
+	
 	<div class="list">
 		{% for thing in things %}
-			<p>{{thing.id}}. {{ thing.body }}</p>
+			<p>{{thing.id}}. {{ thing.body }} <br />
+	<!--<form action="{{ url_for('update', id=thing.id)}}" method="post">
+		<input type="submit" value="已完成" onclick="return confirm('确定吗?');">-->
+		<a href="{{ url_for('update', id=thing.id)}}">已完成</a>
+			</p>
 			{% if not loop.last%}
 			<hr />
 			{% endif %}
 		{% endfor %}
 	</div>
+	</form>
 {% endblock %}
 
 
