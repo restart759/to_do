@@ -132,3 +132,10 @@ input[type=submit] {
   align-self: start;
   min-width: 10em;
 }
+
+p.finished {
+  color: #F00;
+}
+p.no{
+  color: #00F;
+}

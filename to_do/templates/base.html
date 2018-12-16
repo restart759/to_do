@@ -10,6 +10,7 @@
 	<h1>
 		<strong>我的待办事项</strong>
 	</h1>
+	<a href="{{ url_for('all_thing')}}">查看所有</a>
     {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
     {% endfor %}

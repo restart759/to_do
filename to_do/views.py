@@ -27,3 +27,7 @@ def update(id):
 	return redirect(url_for('index'))
 
 
+@app.route('/all', methods = ['GET'])
+def all_thing():
+	things = Thing.query.order_by(Thing.timestamp.desc()).all()
+	return render_template('all.html', things = things)
